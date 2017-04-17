@@ -53,8 +53,8 @@ app.listen(3000,function(){
 });
 
 //connection og MongoDB
-var conn = mongoose.connect('localhost:27017/travel');
-
+//var conn = mongoose.connect('localhost:27017/travel');
+var conn = mongoose.connect('mongodb://sajithaliyanage:capn@sv12@ds161950.mlab.com:61950/travel');
 if(conn){
   console.log('MongoDB Connected');
 }else{
