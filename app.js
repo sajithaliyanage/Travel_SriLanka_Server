@@ -9,10 +9,10 @@ var Place = require('./place');
 app.use(bodyParser.json());
 app.use(cors());
 
-/*
+
 mongoose.connect(process.env.MONGOLAB_URI, function(err) {
     if (err) throw err;
-});*/
+});
 
 app.get('/',function(req,res){
   res.send("Hello_World");
