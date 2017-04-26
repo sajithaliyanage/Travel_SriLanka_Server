@@ -9,4 +9,4 @@ placeShema = new schema({
   description:{type:String}
 })
 
-module.exports = mongoose.model("Place",placeShema);
+module.exports = mongoose.model("Places",placeShema);
