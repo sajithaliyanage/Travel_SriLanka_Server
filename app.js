@@ -54,15 +54,13 @@ app.get('/searchData/:key',function(req,res){
 	//console.log('Server running at http://127.0.0.1:3000/');
 //});
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+//app.listen(process.env.PORT || 3000, function(){
+  //console.log("Express server listening on port %d in %s mode", this.address/().port, app.settings.env);
+//});
 
 //connection og MongoDB
 //var conn = mongoose.connect('localhost:27017/travel');
-var conn = mongoose.connect(process.env.MONGOLAB_URI);
-if(conn){
-  console.log('MongoDB Connected');
-}else{
-  console.log('MongoDB NOT Connected');
-}
+
+mongoose.connect(process.env.MONGOLAB_URI, function(err) {
+    if (err) throw err;
+});
