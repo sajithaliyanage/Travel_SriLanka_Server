@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var Place = require('./place');
+var db = require('config');
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -13,7 +14,7 @@ app.get('/',function(req,res){
   res.send("Hello_World");
 });
 
-/*
+
 app.post('/postData',function(req,res){
   //console.log(req.body);
   var placeTable = new Place(req.body);
@@ -52,16 +53,16 @@ app.get('/searchData/:key',function(req,res){
 //app.listen(3000,function(){
 	//console.log('Server running at http://127.0.0.1:3000/');
 //});
-*/
+
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-/*
+
 //connection og MongoDB
 //var conn = mongoose.connect('localhost:27017/travel');
-var conn = mongoose.connect('mongodb://sajitha:sajitha123@ds161950.mlab.com:61950/travel');
-if(conn){
-  console.log('MongoDB Connected');	
-}else{
-  console.log('MongoDB NOT Connected');
-}*/
+//var conn = mongoose.connect();
+//if(conn){
+ // console.log('MongoDB Connected');
+//}else{
+ // console.log('MongoDB NOT Connected');
+//}
