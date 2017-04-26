@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-mongoose.connect(process.env.MONGOLAB_URI, function(err) {
+mongoose.connect('mongodb://sajitha:sajitha123@ds161950.mlab.com:61950/travel', function(err) {
     if (err) throw err;
 });
 
