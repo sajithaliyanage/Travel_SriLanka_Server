@@ -13,6 +13,7 @@ app.get('/',function(req,res){
   res.send("Hello_World");
 });
 
+/*
 app.post('/postData',function(req,res){
   //console.log(req.body);
   var placeTable = new Place(req.body);
@@ -47,7 +48,7 @@ app.get('/searchData/:key',function(req,res){
     res.json(docs)
   })
 });
-
+*/
 //app.listen(3000,function(){
 	//console.log('Server running at http://127.0.0.1:3000/');
 //});
@@ -55,7 +56,7 @@ app.get('/searchData/:key',function(req,res){
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-
+/*
 //connection og MongoDB
 //var conn = mongoose.connect('localhost:27017/travel');
 var conn = mongoose.connect('mongodb://sajithaliyanage:capn@sv12@ds161950.mlab.com:61950/travel');
@@ -63,4 +64,4 @@ if(conn){
   console.log('MongoDB Connected');
 }else{
   console.log('MongoDB NOT Connected');
-}
+}*/
