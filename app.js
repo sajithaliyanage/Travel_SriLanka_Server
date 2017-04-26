@@ -60,7 +60,7 @@ app.listen(process.env.PORT || 3000, function(){
 
 //connection og MongoDB
 //var conn = mongoose.connect('localhost:27017/travel');
-var conn = mongoose.connect('mongodb://sajitha:sajitha123@ds161950.mlab.com:61950/travel');
+var conn = mongoose.connect(process.env.MONGOLAB_URI);
 if(conn){
   console.log('MongoDB Connected');
 }else{
