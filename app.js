@@ -5,7 +5,6 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var Place = require('./place');
-var db = require('config');
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -55,16 +54,10 @@ app.get('/searchData/:key',function(req,res){
   })
 });
 
-//app.listen(3000,function(){
-	//console.log('Server running at http://127.0.0.1:3000/');
-//});
-
-
-
 //connection og MongoDB
 //var conn = mongoose.connect('localhost:27017/travel');*/
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address/().port, app.settings.env);
+app.listen(3000,function(){
+	console.log('Server running at http://127.0.0.1:3000/');
 });
 
