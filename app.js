@@ -18,7 +18,6 @@ app.get('/',function(req,res){
   res.send("Hello_World");
 });
 
-/*
 app.post('/postData',function(req,res){
   //console.log(req.body);
   var placeTable = new Place(req.body);
@@ -59,7 +58,7 @@ app.get('/searchData/:key',function(req,res){
 //});
 
 //connection og MongoDB
-//var conn = mongoose.connect('localhost:27017/travel');*/
+//var conn = mongoose.connect('localhost:27017/travel');
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Done");
