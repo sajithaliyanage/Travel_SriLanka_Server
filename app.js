@@ -10,11 +10,16 @@ var db = require('config');
 app.use(bodyParser.json());
 app.use(cors());
 
+/*
+mongoose.connect(process.env.MONGOLAB_URI, function(err) {
+    if (err) throw err;
+});*/
+
 app.get('/',function(req,res){
   res.send("Hello_World");
 });
 
-
+/*
 app.post('/postData',function(req,res){
   //console.log(req.body);
   var placeTable = new Place(req.body);
@@ -59,8 +64,6 @@ app.get('/searchData/:key',function(req,res){
 //});
 
 //connection og MongoDB
-//var conn = mongoose.connect('localhost:27017/travel');
+//var conn = mongoose.connect('localhost:27017/travel');*/
 
-mongoose.connect(process.env.MONGOLAB_URI, function(err) {
-    if (err) throw err;
-});
+
