@@ -16,7 +16,7 @@ app.get('/',function(req,res){
 
 app.post('/postData',function(req,res){
   //console.log(req.body);
-  var placeTable = new Places(req.body);
+  var placeTable = new Place(req.body);
   placeTable.save(function(err,docs){
     console.log(docs);
     res.json(docs);
@@ -24,7 +24,7 @@ app.post('/postData',function(req,res){
 });
 
 app.get('/getData',function(req,res){
-  Places.find(function(err,docs){
+  Place.find(function(err,docs){
     //console.log(docs);
     res.json(docs)
   })
@@ -32,7 +32,7 @@ app.get('/getData',function(req,res){
 
 app.get('/getOneData/:id',function(req,res){
   var id = req.params.id;
-  Places.findOne({_id:id},function(err,doc){
+  Place.findOne({_id:id},function(err,doc){
     res.json(doc);
   });
 });
@@ -43,7 +43,7 @@ app.get('/searchData/:key',function(req,res){
   if(!key){
 	console.log("hello");
   }
-  Places.find( {"lname" :{$regex : ".*"+key+".*", $options: '-i'}},function(err,docs){
+  Place.find( {"lname" :{$regex : ".*"+key+".*", $options: '-i'}},function(err,docs){
     //console.log(docs);q
     res.json(docs)
   })
