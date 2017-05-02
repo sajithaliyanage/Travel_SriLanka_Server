@@ -57,7 +57,7 @@ app.get('/searchData/:key',function(req,res){
 });
 
 app.post('/uploadImage', function(req, res) {
-  console.log("This is the one - "req.body);
+  console.log("This is the one - "+req.body);
 if (!req.files)
     return res.status(400).send('No files were uploaded.');
  
