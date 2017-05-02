@@ -58,6 +58,18 @@ app.get('/searchData/:key',function(req,res){
 
 app.post('/uploadImage', function(req, res) {
   console.log("This is the one - "+req.body);
+ if (!req.files)
+    return res.status(400).send('No files were uploaded.');
+
+  let sampleFile = req.files.file;
+  //var nameImage = req.files.upload.name;
+ 
+  sampleFile.mv('https://hidden-thicket-18651.herokuapp.com/uploads/filename.jpg', function(err) {
+    if (err)
+      return res.status(500).send(err);
+ 
+    res.send('File uploaded!');
+  });
 });
 
 
