@@ -61,7 +61,7 @@ app.post('/uploadImage', function(req, res) {
  if (!req.files)
     return res.status(400).send('No files were uploaded.');
 
-  let sampleFile = req.body.file;
+  let sampleFile = req.files.sampleFile;
   //var nameImage = req.files.upload.name;
  
   sampleFile.mv('https://hidden-thicket-18651.herokuapp.com/uploads/filename.jpg', function(err) {
