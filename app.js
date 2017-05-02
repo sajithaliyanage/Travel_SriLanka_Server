@@ -5,9 +5,12 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var Place = require('./place');
+const fileUpload = require('express-fileupload');
+var mkdirp = require('mkdirp');
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use(fileUpload());
 
 
 mongoose.connect('mongodb://sajitha:sajitha123@ds161950.mlab.com:61950/travel', function(err) {
@@ -52,6 +55,15 @@ app.get('/searchData/:key',function(req,res){
     res.json(docs)
   })
 });
+
+app.post('/uploadImage', function(req, res) {
+  console.log(req.body);
+});
+
+
+
+
+
 
 //app.listen(3000,function(){
 	//console.log('Server running at http://127.0.0.1:3000/');
